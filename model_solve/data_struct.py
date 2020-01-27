@@ -48,10 +48,10 @@ class Solver:
         R[0,:,:] = self.__init_condition #设置初始条件
         for n in range(1,N):
             #设置边界条件
-            R[n,:,0] = self.__bound_condition[0][n]
-            R[n,:,-1] = self.__bound_condition[1][n]
-            R[n,0,:] = self.__bound_condition[2][n]
-            R[n,-1,:] = self.__bound_condition[3][n]
+            R[n,:,0] = self.__bound_condition[0][n,:]
+            R[n,:,-1] = self.__bound_condition[1][n,:]
+            R[n,0,:] = self.__bound_condition[2][n,:]
+            R[n,-1,:] = self.__bound_condition[3][n,:]
             #迭代计算
             for i in range(1,M1-1):
                 for j in range(1,M2-1):
